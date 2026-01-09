@@ -201,7 +201,7 @@ img {
     border-radius: 12px;
 }
 
-.product-selector_button {
+.product_selector_button {
     border: 2px solid #039869 !important;
     width: 26px;
     height: 26px;
@@ -229,7 +229,7 @@ img {
     unicode-bidi: isolate;
 }
 
-.product-selector_info {
+.product_selector_info {
     font-size: 12px;
     margin: 0;
     line-height: 1.3em;
@@ -261,6 +261,8 @@ img {
     height: 31px;
 }
 
+/* ================= PRODUCT DELIVERY ================= */
+
 .main_product_delivery {
     display: flex;
     align-items: center;
@@ -280,6 +282,8 @@ img {
     border-radius: 4px;
     color: #fff;
 }
+
+/* ================= PRODUCT ACTIONS ================= */
 
 .add_to_cart {
     background: #000;
@@ -325,6 +329,8 @@ img {
     display: none !important;
 }
 
+/* ================= PRODUCT PAYMENT ================= */
+
 .product_payment_image {
     margin: 16px 0;
     display: block;
@@ -344,6 +350,8 @@ img {
     align-items: center;
 }
 
+/* ================= PRODUCT REVIEW ================= */
+
 .main_product_review {
     background: #f3eee0 !important;
     margin-top: 24px;
@@ -359,7 +367,7 @@ img {
 }
 
 .main_product_review_meta p img {
-    max_width: 120px;
+    max-width: 120px;
 }
 
 .main_product_review_star {
@@ -375,6 +383,8 @@ img {
     font-size: 16px;
     letter-spacing: 0;
 }
+
+/* ================= PRODUCT TAB ================= */
 
 .product_tab {
     margin-top: 16px;
@@ -406,3 +416,138 @@ img {
     display: block;
     transition: all .2s;
 }
+
+/* ================= PRODUCT TAB ACCORDION ================= */
+.product_tab_content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* Khi mở */
+.product_tab_block.active .product_tab_content {
+    max-height: 1000px; /* đủ lớn cho content */
+    opacity: 1;
+    margin-top: 12px;
+}
+
+/* Rotate icon */
+.product_tab_block.active .product_tab_thumb img {
+    transform: rotate(180deg);
+}
+
+/* Icon animation */
+.product_tab_thumb img {
+    transition: transform 0.3s ease;
+}
+
+/* Cursor rõ ràng */
+.product_tab_thumb {
+    cursor: pointer;
+}
+
+/* ================= NUTRI INFO ================= */
+#nutri_info {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+}
+
+#nutri_info.active {
+    display: block;
+}
+
+.nutri_popup_outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000b3;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+#nutri_info.active .nutri_popup_outer {
+    display: flex;
+}
+
+.nutri_popup_inner {
+    width: 100%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 16px;
+    border-radius: 12px;
+    position: relative;
+    background: #fff;
+}
+
+.nutri_popup_close {
+    position: absolute;
+    width: 24px;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    border-radius: 50%;
+    border: 1px solid #d5416e;
+}
+
+.nutrition_popup_inner .main_product_title {
+    margin-top: 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+.main_product_title {
+    font-size: 28px;
+    margin: 16px 0;
+    line-height: 1.4em;
+    font-family: Lora;
+    font-weight: 400;
+}
+
+.main_product_btn {
+    display: block;
+    padding: 20px;
+    cursor: pointer;
+    margin: 16px 0;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.main_product_point {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.main_product_point_line {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.main_product_point_line img {
+    width: 16px;
+    height: 16px;
+}
+
+.main_product_point_line p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3em;
+}
+
+/* =================  ================= */

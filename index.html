@@ -24,7 +24,7 @@
                             <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/leaves_1247958_1_cf2e7df4-c113-4c3a-be49-f876ec94d873.png?v=1766822629"
                                 alt="Natural Ingredients" />
                         </span>
-                        <span>Nutritional Information</span>
+                        <span id="open_nutri_info">Nutritional Information</span>
                     </div>
                     <img class="main_product_badge"
                         src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/nysale.png?v=1766822224">
@@ -220,8 +220,9 @@
                             src="https://trysculptique.com/cdn/shop/files/AI_Nurse_Holding_TORC_2_efcbd677-7242-4cb2-9f99-ad1e3726b19b.png?v=1752500889">
                         <div>
                             <p class="review_meta_text">Margaret Ellison | FL
-                            <img
-                                src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_7966.png?v=1752068267"></p>
+                                <img
+                                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_7966.png?v=1752068267">
+                            </p>
                             <img class="main_product_review_star"
                                 src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/stars-4.5_1.png?v=1752068267">
                         </div>
@@ -310,7 +311,74 @@
                 </div>
             </div>
         </section>
+        <section id="nutri_info">
+            <div class="nutri_popup_outer">
+                <div class="nutri_popup_inner">
+                    <img class="nutri_popup_close" src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Button_To_Expand.png?v=1752069152">
+                    <h2 class="main_product_title centered">Nutritional Information</h2>
+                    <img class="Desktop_only nutrition_image"
+                        src="https://trysculptique.com/cdn/shop/files/ingredients-min.png?v=1758713223">
+                    <div class="main_product_btn">Try Lymphatic Drainage Risk-Free</div>
+                    <div class="main_product_point">
+                        <div class="main_product_point_line">
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285">
+                            <p>Made & produced in the USA</p>
+                        </div>
+                        <div class="main_product_point_line">
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285">
+                            <p>100% Natural Ingredients</p>
+                        </div>
+                        <div class="main_product_point_line">
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285">
+                            <p>60-Day Money-Back Guarantee</p>
+                        </div>
+                        <div class="main_product_point_line">
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285">
+                            <p>Free Shipping</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <script>
+        document.querySelectorAll('.product_tab_thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const block = thumb.closest('.product_tab_block');
+                block.classList.toggle('active');
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const openBtn = document.getElementById("open_nutri_info");
+            const nutriSection = document.getElementById("nutri_info");
+            const closeBtn = nutriSection.querySelector(".nutri_popup_close");
+            const overlay = nutriSection.querySelector(".nutri_popup_outer");
+
+            // Mở popup
+            openBtn.addEventListener("click", function () {
+                nutriSection.classList.add("active");
+                document.body.style.overflow = "hidden";
+            });
+
+            // Đóng khi click icon (X)
+            closeBtn.addEventListener("click", function () {
+                nutriSection.classList.remove("active");
+                document.body.style.overflow = "";
+            });
+
+            // Đóng khi click nền ngoài
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) {
+                    nutriSection.classList.remove("active");
+                    document.body.style.overflow = "";
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
