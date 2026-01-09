@@ -1,0 +1,495 @@
+/* 
+CSS được tối ưu cho section Pricing_CTA dựa trên trang web thực tế
+Sử dụng layout 2 cột với responsive design
+*/
+
+/* ================= RESET CƠ BẢN ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================= CONTAINER CHÍNH ================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ================= HEADER ================= */
+#shopify-section-header {
+    text-align: center;
+    padding: 20px 0;
+    background: #fff;
+}
+
+#shopify-section-header .logo {
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+/* ================= PRICING_CTA SECTION ================= */
+#Pricing_CTA {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    
+    /* Layout Grid 2 cột */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* ================= CỘT TRÁI - HÌNH ẢNH SẢN PHẨM ================= */
+.main_product {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Hình ảnh chính */
+.main_product_image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.main_product_image > img:first-child {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+/* Badge sale */
+.main_product_bage {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 80px;
+    z-index: 2;
+}
+
+/* Nutrition info overlay */
+.main_product_nutrition_info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main_product_nutrition_info img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Gallery hình ảnh phụ */
+.main_product_2nd,
+.main_product_3rd,
+.main_product_bottom {
+    display: flex;
+    gap: 12px;
+}
+
+.product_2nd,
+.product_3rd,
+.product_bottom {
+    flex: 1;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.product_2nd:hover,
+.product_3rd:hover,
+.product_bottom:hover {
+    transform: scale(1.05);
+}
+
+/* ================= CỘT PHẢI - THÔNG TIN SẢN PHẨM ================= */
+.main_product_info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Review section */
+.main_product_review .review {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.main_product_review .review img {
+    width: 120px;
+    height: auto;
+}
+
+.main_product_review .review p {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Product title */
+.main_product_title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+/* Features list */
+.main_product_features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.main_product_feature_line {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.product_features {
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.main_product_feature_line p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* ================= PRODUCT SELECTOR ================= */
+.product_selector {
+    margin-bottom: 24px;
+}
+
+.product_selector_block {
+    border: 2px solid #e8f5e8;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.product_selector_block:hover {
+    border-color: #4CAF50;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.1);
+    transform: translateY(-2px);
+}
+
+.product_selector_block.selected {
+    border-color: #4CAF50;
+    background: #f8fff8;
+}
+
+.product_selector_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.product_selector_button {
+    display: flex;
+    align-items: center;
+}
+
+.product_selector_button input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.product_selector_title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.product_selector_subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.product_selector_price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #4CAF50;
+}
+
+.product_selector_compare {
+    font-size: 16px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.product_selector_footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+.product_selector_footer img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Badge cho gói được recommend */
+.product_selector_badge {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FF6B6B;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ================= CTA BUTTON ================= */
+.add_to_cart {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.add_to_cart:hover {
+    background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+}
+
+.add_to_cart:active {
+    transform: translateY(0);
+}
+
+/* ================= DELIVERY INFO ================= */
+.main_product_delivery {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin: 16px 0;
+}
+
+.delivery_icon {
+    width: 24px;
+    height: 24px;
+}
+
+.main_product_delivery p {
+    font-size: 14px;
+    color: #666;
+}
+
+.delivery_date {
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+/* ================= GUARANTEE & PAYMENT INFO ================= */
+.product_act_icon {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.product_act_icon_line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+}
+
+.product_act_icon_line img {
+    width: 24px;
+    height: 24px;
+}
+
+.product_act_icon_line p {
+    font-size: 14px;
+    color: #666;
+}
+
+.product_payment-icons {
+    width: 100%;
+    max-width: 300px;
+    margin: 16px 0;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 1024px) {
+    #Pricing_CTA {
+        gap: 40px;
+        padding: 30px 16px;
+    }
+    
+    .main_product {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    #Pricing_CTA {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px 12px;
+    }
+    
+    .main_product_title {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .product_2nd,
+    .product_3rd,
+    .product_bottom {
+        height: 100px;
+    }
+    
+    .main_product_nutrition_info {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+    
+    .product_selector_block {
+        padding: 16px;
+    }
+    
+    .product_selector_price {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main_product_2nd,
+    .main_product_3rd {
+        flex-wrap: wrap;
+    }
+    
+    .product_2nd,
+    .product_3rd {
+        width: 48%;
+        flex: none;
+    }
+    
+    .main_product_bottom {
+        justify-content: center;
+    }
+    
+    .product_bottom {
+        width: 80%;
+        max-width: 200px;
+    }
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main_product_feature_line {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.main_product_feature_line:nth-child(1) { animation-delay: 0.1s; }
+.main_product_feature_line:nth-child(2) { animation-delay: 0.2s; }
+.main_product_feature_line:nth-child(3) { animation-delay: 0.3s; }
+.main_product_feature_line:nth-child(4) { animation-delay: 0.4s; }
+.main_product_feature_line:nth-child(5) { animation-delay: 0.5s; }
+.main_product_feature_line:nth-child(6) { animation-delay: 0.6s; }
+
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus states for keyboard navigation */
+.add_to_cart:focus,
+.product_selector_block:focus {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}

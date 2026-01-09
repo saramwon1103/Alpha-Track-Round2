@@ -1,0 +1,408 @@
+/* 
+CSS được tối ưu cho section Pricing_CTA dựa trên trang web thực tế
+Sử dụng layout 2 cột với responsive design
+*/
+
+/* ================= RESET CƠ BẢN ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================= CONTAINER CHÍNH ================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ================= HEADER ================= */
+#shopify-section-header {
+    text-align: center;
+    padding: 20px 0;
+    background: #fff;
+}
+
+#shopify-section-header .logo {
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+/* ================= PRICING_CTA SECTION ================= */
+#Pricing_CTA {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    
+    /* Layout Grid 2 cột */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* ================= CỘT TRÁI - HÌNH ẢNH SẢN PHẨM ================= */
+.main_product {
+    width:403px;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Hình ảnh chính */
+.main_product_image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.main_product_image img {
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Badge sale */
+.main_product_badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 80px;
+    z-index: 2;
+}
+
+/* Nutrition info overlay */
+.main_product_nutrition_info {
+    position: absolute;
+    bottom: 32px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    line-height: 1.2em;
+    max-width: 290px;
+    padding: 8px 24px;
+    background: #ffffffd9;
+    border: 1px solid black;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.main_product_nutrition_info img {
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main_product_nutrition_info span {
+    display: flex;
+    align-items: center;
+}
+
+.main_product_2nd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.main_product_3rd {
+    display: grid;
+    margin: 16px 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.main_product_bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+
+
+/* ================= CỘT PHẢI - THÔNG TIN SẢN PHẨM ================= */
+.main_product_reviews {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.main_product_title {
+    font-size: 28px;
+    margin: 16px 0;
+    line-height: 1.4em;
+    font-family: Lora;
+    font-weight: 400;
+}
+
+.main_product_feature_line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.main_product_feature_line p {
+    margin: 0;
+    line-height: 1.3em;
+    font-size: 16px;
+}
+
+/* ================= PRODUCT SELECTOR ================= */
+.product_selector{
+    background: #f3eee0 !important;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff7f8;
+    margin-bottom: 16px;
+    margin-top: 24px;
+}
+
+.product_selector_block {
+    border: 1px solid #039869 !important;
+}
+
+.product_selector_block {
+    border-radius: 12px;
+    border: 1px solid rgba(247, 160, 160, 1);
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.product_selector_head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.product-selector_button {
+    border: 2px solid #039869 !important;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(247, 160, 160, 1);
+}
+
+.product_selector_title, .product_selector_price {
+    font-family: Nunito;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3em;
+    font-weight: 600;
+}
+
+.product_selector_price p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.product-selector_info {
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.3em;
+}
+
+.product_selector_compare {
+    font-size: 14px;
+    line-height: 1.3em;
+    margin: 0;
+    display: block;
+}
+
+.product_selector_footer {
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    background: #039869 !important;
+}
+
+.product_selector_footer p {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1em;
+}
+
+.product_selector_footer img {
+    width: 31px;
+    height: 31px;
+}
+
+.main_product_delivery {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.main_product_delivery p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.3em;
+}
+
+.main_product_delivery span {
+    background: #039869 !important;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.add_to_cart {
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+    transition: all .2s;
+}
+
+.product_act_footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.product_act_footer_line:nth-child(1) {
+    padding-right: 16px;
+    border-right: 1px solid black;
+}
+
+.product_act_footer_line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.product_act_footer_line p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+.hided {
+    display: none !important;
+}
+
+.product_payment_image {
+    margin: 16px 0;
+    display: block;
+    width: 100%;
+}
+
+.product_act_icon_line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.product_act_icon_line img {
+    width: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.main_product_review {
+    background: #f3eee0 !important;
+    margin-top: 24px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.main_product_review_meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.main_product_review_meta p img {
+    max_width: 120px;
+}
+
+.main_product_review_star {
+    display: block;
+    max-width: 100px;
+    margin-top: 6px;
+}
+
+.main_product_review_content p {
+    margin-top: 0;
+    margin-bottom: 8px;
+    line-height: 1.3em;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+.product_tab {
+    margin-top: 16px;
+}
+
+.product_tab_block {
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 32px;
+    border: 1px solid #d2d2d2;
+    cursor: pointer;
+}
+
+.product_tab_thumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.product_tab_thumb p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+.product_tab_thumb img {
+    width: 24px;
+    display: block;
+    transition: all .2s;
+}
