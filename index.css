@@ -861,3 +861,129 @@ img {
 .product_primary_btn_footer img {
     width: 24px !important;
 }
+
+/* ================= INGREDIENT ================= */
+.product_judge_outer.ingredients {
+    background: #f3eee0;
+}
+
+.product_judge_container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.product_section_title {
+    font-size: 32px;
+    line-height: 1.3em;
+    margin: 16px 0;
+    font-weight: 400;
+    font-family: Lora;
+}
+
+.product_section_title span {
+    color: #039869 !important;
+}
+
+.product_section_text {
+    font-size: 18px;
+    margin: 16px 0;
+    line-height: 1.3em;
+}
+
+.product_ingr_table {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: #fff;
+    border-radius: 12px;
+    border: .5px solid black;
+    overflow: hidden;
+}
+
+.product_ingr {
+    border: .5px solid black;
+    padding: 24px;
+    cursor: pointer;
+}
+
+.product_ingr_subtitle {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    font-size: 16px;
+    color: #0c7c00;
+    margin: 0;
+}
+
+.product_ingr_subtitle img {
+    max-width: 16px;
+    display: block;
+}
+
+.product_ingr img {
+    display: block;
+    max-width: 120px;
+    margin: 12px auto;
+    max-height: 80px;
+    width: auto !important;
+}
+
+.product_ingr_thumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.product_ingr_thumb h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3em;
+}
+
+.product_ingr_toggle img {
+    max-width: 24px;
+    display: block;
+    margin-left: auto;
+    fLex-shrink: 0;
+}
+
+.product_ingr_content {
+    padding-top: 12px;
+    display: none;
+}
+
+.product_ingr_content p {
+    margin: 0;
+    line-height: 1.3em;
+    font-size: 14px;
+}
+
+.product_ingr_table_small {
+    max-width: 580px;
+    margin: 40px auto auto;
+}
+
+.product_ingr_content {
+    display: none;
+    padding-top: 12px;
+}
+
+.product_ingr.open .product_ingr_content {
+    display: block;
+}
+
+.product_ingr_toggle {
+    cursor: pointer;
+}
+
+.product_ingr_content {
+    display: none;
+    margin-top: 10px;
+}
+
+.product_ingr.open .product_ingr_content {
+    display: block;
+}
