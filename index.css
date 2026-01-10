@@ -1215,3 +1215,40 @@ img {
     background: var(--pink-main);
     color: #fff;
 }
+
+/* ================= REVIEWS ================= */
+.product_judge_outer.pink {
+    background: #f3eee0;
+}
+
+.product_icons_grid {
+    display: flex;
+    gap: 24px;
+    margin: auto;
+}
+
+.product_icons_grid>div {
+    width: 100%;
+    text-align: center;
+}
+
+.product_icons_grid img {
+    width: auto;
+    height: 40px;
+    max-width: 40px;
+    display: block;
+    margin: auto auto 16px;
+}
+
+.product_icons_grid p.h4title {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+.product_icons_grid p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.3em;
+}
