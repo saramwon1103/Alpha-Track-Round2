@@ -1252,3 +1252,71 @@ img {
     margin: 0;
     line-height: 1.3em;
 }
+
+/* ================= EXPERT ================= */
+.product_judge_outer {
+    padding: 56px 0;
+}
+
+.product_expert_advice {
+    display: flex;
+    background: #f7f7f7;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product_expert_content {
+    padding: 32px;
+}
+
+.product_subtitle {
+    font-size: 16px;
+    line-height: 1.3em;
+    margin: 0;
+    color: #737373;
+}
+
+.product_section_title {
+    font-size: 32px;
+    line-height: 1.3em;
+    margin: 16px 0;
+    font-weight: 400;
+    font-family: Lora;
+}
+
+.product_text p {
+    font-size: 18px;
+    line-height: 1.3em;
+    margin: 12px 0;
+}
+
+.btn_container {
+    margin-top: 24px;
+}
+
+.product_primary_btn {
+    font-family: Nunito;
+    display: inline-block;
+    padding: 18px 80px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: all .2s;
+    line-height: 1.3em;
+    text-align: center;
+}
+
+.product_primary_btn_footer img {
+    width: 24px !important;
+}
+
+.product_expert_media img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
