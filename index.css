@@ -687,7 +687,7 @@ img {
     margin: 24px auto;
 }
 
-/* ================= Drainage ================= */
+/* ================= INFO, INFO2 ================= */
 .pli_flex {
     display: flex;
     gap: 100px;
@@ -750,4 +750,114 @@ img {
 .pli_flex img {
     display: block;
     width: 100%;
+}
+
+/* ================= NOTHING ================= */
+.outer_how_nothing {
+    background-color: #f7f2e7;
+    padding: 70px 0;
+    font-family: Inter, sans-serif;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1c1b1b;
+    margin-bottom: 35px;
+}
+
+.product_why_bloating_grid {
+    display: flex;
+    gap: 16px;
+}
+
+.product_why_nothing_cell {
+    border-radius: 6px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.product_why_nothing_cell img {
+    width: 100%;
+    display: block;
+}
+
+.product_why_nothing_cell_in {
+    background: #f7f7f7;
+    padding: 24px;
+    text-align: center;
+}
+
+.product_why_nothing_cell_in h4 {
+    font-size: 20px;
+    line-height: 1.3em;
+    margin: 0;
+}
+
+.product_why_nothing_pink {
+    background: #ffe3e3;
+    padding: 8px 16px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 24px;
+    min-height: 180px;
+}
+
+.product_why_nothing_subtitle {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1.3em;
+    font-weight: 600;
+}
+
+.product_why_nothing_subtitle img {
+    max-width: 24px;
+}
+
+.product_why_nothing_text {
+    font-size: 16px;
+    line-height: 1.3em;
+    margin: 12px 0 0;
+}
+
+.product_why_note_img {
+    width: 100%;
+    max-width: 920px;
+    margin: auto;
+}
+
+.product_why_note_img img {
+    width: 100%;
+    display: block;
+}
+
+.product_primary_btn {
+    font-family: Nunito;
+    display: inline-block;
+    padding: 18px 80px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: all .2s;
+    line-height: 1.3em;
+    text-align: center;
+}
+
+.product_primary_btn_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 1.3em;
+    margin: 16px 0 0;
+}
+
+.product_primary_btn_footer img {
+    width: 24px !important;
 }
