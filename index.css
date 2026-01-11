@@ -3,6 +3,21 @@ CSS được tối ưu cho section Pricing_CTA dựa trên trang web thực tế
 Sử dụng layout 2 cột với responsive design
 */
 
+/* ================= CSS VARIABLES ================= */
+:root {
+    --primary-green: #039869;
+    --primary-green-dark: #027a5a;
+    --background-light: #f3eee0;
+    --background-white: #fff;
+    --text-dark: #333;
+    --text-gray: #666;
+    --text-light-gray: #888;
+    --border-gray: #d2d2d2;
+    --pink-main: #ff7a7a;
+    --pink-dark: #ff5f5f;
+    --pink-light: #ffe5e5;
+}
+
 /* ================= RESET CƠ BẢN ================= */
 * {
     box-sizing: border-box;
@@ -23,14 +38,99 @@ img {
     display: block;
 }
 
-/* ================= CONTAINER CHÍNH ================= */
+/* ================= BASE CLASSES - Tái sử dụng cho nhiều components ================= */
+
+/* Icon + Text Pattern - Dùng chung cho feature lines, footer lines, etc. */
+.flex-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.flex-line:last-of-type {
+    margin-bottom: 0;
+}
+
+.flex-line img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.flex-line p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+/* Button Base - Tái sử dụng cho tất cả buttons */
+.btn-base {
+    display: inline-block;
+    padding: 18px 40px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: Nunito;
+    transition: all 0.2s ease;
+    line-height: 1.3em;
+    text-align: center;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #333;
+}
+
+/* Typography Base - Tái sử dụng cho titles */
+.title-base {
+    font-family: Lora;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin: 16px 0;
+}
+
+.title-h1 {
+    font-size: 32px;
+}
+
+.title-h2 {
+    font-size: 28px;
+}
+
+.title-h3 {
+    font-size: 24px;
+}
+
+/* Utility Classes */
+.centered {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+/* Container Base */
+.section-wrapper {
+    padding: 56px 0;
+}
+
+/* ================= CONTAINER CHÍNH - Layout cơ bản ================= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER - Logo và navigation ================= */
 #shopify-section-header {
     text-align: center;
     padding: 20px 0;
@@ -42,12 +142,12 @@ img {
     margin: 0 auto;
 }
 
-/* ================= PRICING_CTA SECTION ================= */
+/* ================= PRICING_CTA SECTION - Layout grid 2 cột chính ================= */
 #Pricing_CTA {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    
+
     /* Layout Grid 2 cột */
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -158,26 +258,9 @@ img {
     font-weight: 400;
 }
 
-.main_product_feature_line {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 12px 0;
-}
-
-.main_product_feature_line:last-of-type {
-    margin-bottom: 0;
-}
-
-.main_product_feature_line p {
-    margin: 0;
-    line-height: 1.3em;
-    font-size: 16px;
-}
-
 /* ================= PRODUCT SELECTOR ================= */
-.product_selector{
-    background: #e8f5f0;
+.product_selector {
+    background: #f3eee0;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 16px;
@@ -189,7 +272,8 @@ img {
     margin: 6px 0;
     display: block;
     width: 100%;
-    border: none; /* Thay thế frameborder="0" trong HTML5 */
+    border: none;
+    /* Thay thế frameborder="0" trong HTML5 */
 }
 
 /* Main product features container */
@@ -203,7 +287,7 @@ img {
 
 .product_selector_block {
     border-radius: 12px;
-    border: 1px solid #039869;
+    border: 1px solid var(--primary-green);
     position: relative;
     margin-bottom: 12px;
     cursor: pointer;
@@ -214,12 +298,12 @@ img {
     gap: 0;
 }
 
-.product_selector_block > * {
+.product_selector_block>* {
     margin: 0;
 }
 
 .product_selector_block:hover {
-    border-color: #027a5a;
+    border-color: var(--primary-green-dark);
     box-shadow: 0 2px 8px rgba(3, 152, 105, 0.15);
 }
 
@@ -240,11 +324,12 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #039869;
+    border: 2px solid var(--primary-green);
     transition: all 0.2s ease;
 }
 
-.product_selector_title, .product_selector_price {
+.product_selector_title,
+.product_selector_price {
     font-family: Nunito;
     margin: 0;
     font-size: 16px;
@@ -268,19 +353,22 @@ img {
 }
 
 /* Selected state styling */
-.product_selector_block:has(input[type="radio"]:checked) {
-    border-color: #027a5a;
+.product_selector_block:has(input[type="radio"]:checked),
+.product_selector_block.active {
+    border-color: var(--primary-green-dark);
     border-width: 2px;
     background: #f0faf8;
 }
 
-.product_selector_block:has(input[type="radio"]:checked) .product_selector_button {
+.product_selector_block:has(input[type="radio"]:checked) .product_selector_button,
+.product_selector_block.active .product_selector_button {
     border-color: #027a5a;
     background: #039869;
     position: relative;
 }
 
-.product_selector_block:has(input[type="radio"]:checked) .product_selector_button::after {
+.product_selector_block:has(input[type="radio"]:checked) .product_selector_button::after,
+.product_selector_block.active .product_selector_button::after {
     content: '';
     width: 12px;
     height: 12px;
@@ -388,17 +476,11 @@ img {
 /* ================= PRODUCT ACTIONS ================= */
 
 .add_to_cart {
-    background: #000;
-    color: #fff;
-    font-weight: 700;
-    font-size: 18px;
-    cursor: pointer;
+    /* Kế thừa từ .btn-base và .btn-primary */
     border-radius: 8px;
     padding: 12px;
     width: 100%;
-    text-align: center;
     margin-top: 12px;
-    transition: all .2s;
 }
 
 .product_act_footer {
@@ -414,17 +496,10 @@ img {
     border-right: 1px solid black;
 }
 
+/* Sử dụng base class flex-line với justify-center */
 .product_act_footer_line {
-    display: flex;
-    align-items: center;
     justify-content: center;
     gap: 8px;
-}
-
-.product_act_footer_line p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.3em;
 }
 
 .hided {
@@ -439,11 +514,9 @@ img {
     width: 100%;
 }
 
+/* Sử dụng base class flex-line */
 .product_act_icon_line {
-    display: flex;
-    align-items: center;
     gap: 8px;
-    margin: 12px 0;
 }
 
 .product_act_icon_line img {
@@ -455,7 +528,6 @@ img {
 /* ================= PRODUCT REVIEW ================= */
 
 .main_product_review {
-    background: #f3eee0;
     margin-top: 24px;
     padding: 12px;
     border-radius: 12px;
@@ -529,7 +601,8 @@ img {
 
 /* Khi mở */
 .product_tab_block.active .product_tab_content {
-    max-height: 1000px; /* đủ lớn cho content */
+    max-height: 1000px;
+    /* đủ lớn cho content */
     opacity: 1;
     margin-top: 12px;
 }
@@ -604,10 +677,6 @@ img {
     margin-top: 0;
 }
 
-.centered {
-    text-align: center;
-}
-
 .main_product_title {
     font-size: 28px;
     margin: 16px 0;
@@ -635,10 +704,11 @@ img {
     justify-content: center;
 }
 
+/* Sử dụng base class flex-line với custom gap và font-size */
 .main_product_point_line {
-    display: flex;
-    align-items: center;
     gap: 4px;
+    margin: 0;
+    /* Override margin từ base class */
 }
 
 .main_product_point_line img {
@@ -647,12 +717,11 @@ img {
 }
 
 .main_product_point_line p {
-    margin: 0;
     font-size: 14px;
-    line-height: 1.3em;
+    /* Override font-size từ base class */
 }
 
-/* =================  ================= */
+/* ================= LOGOS - Auto-scrolling logo animation ================= */
 #logo_wrap {
     position: relative;
     margin: auto;
@@ -698,12 +767,13 @@ img {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-50%);
     }
 }
 
-/* ================= BLOATING ================= */
+/* ================= BLOATING - Symptom showcase với grid layout ================= */
 .product_judge_outer {
     padding-bottom: 0;
 }
@@ -713,13 +783,9 @@ img {
     max-width: 800px;
 }
 
+/* Sử dụng base class title-base, title-h1 và centered */
 .product_judge_container_title {
-    text-align: center;
-    font-size: 32px;
-    line-height: 1.3em;
-    margin: 16px 0;
-    font-weight: 400;
-    font-family: Lora;
+    /* Kế thừa từ .title-base, .title-h1, .centered */
 }
 
 .product_judge_container_title span {
@@ -754,7 +820,7 @@ img {
 
 .product_why_bloating_cell img {
     width: 100%;
-    height: 180px;        
+    height: 180px;
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -803,7 +869,9 @@ img {
     padding: 0 20px;
 }
 
-.pli_top_text *, .pli_pink_text *, .pli_bottom_text * {
+.pli_top_text *,
+.pli_pink_text *,
+.pli_bottom_text * {
     font-size: 18px;
     line-height: 1.3em;
     margin: 8px 0;
@@ -832,12 +900,14 @@ img {
     background: #ffe3e3;
 }
 
-.pli_bottom_text ul, .pli_pink_text ul {
+.pli_bottom_text ul,
+.pli_pink_text ul {
     padding-left: 0;
     margin-left: 0;
 }
 
-.pli_bottom_text li, .pli_pink_text li {
+.pli_bottom_text li,
+.pli_pink_text li {
     padding-left: 32px;
     color: #a60003;
     background-image: url("https://trysculptique.com/cdn/shop/files/Vector_7.png?v=1760702839");
@@ -960,11 +1030,21 @@ img {
     margin: 16px 0 0;
 }
 
+/* Align left khi trong container align-left */
+.align-left .product_primary_btn_footer {
+    justify-content: flex-start;
+}
+
+/* Đảm bảo center khi trong container centered */
+.centered .product_primary_btn_footer {
+    justify-content: center;
+}
+
 .product_primary_btn_footer img {
     width: 24px !important;
 }
 
-/* ================= INGREDIENT ================= */
+/* ================= INGREDIENT - Grid table với expandable content ================= */
 .product_judge_outer.ingredients {
     background: #f3eee0;
 }
@@ -1399,7 +1479,10 @@ img {
     overflow: hidden;
 }
 
-/* ================= FAQ ================= */
+/* ================= UGC ================= */
+
+
+/* ================= FAQ - Accordion với animation ================= */
 .product_faq_container {
     background: linear-gradient(180deg, #fff, #f3eee0);
     max-width: 824px;
@@ -1442,7 +1525,8 @@ img {
 
 /* Khi active thì hiện */
 .product_faq_box.active .product_faq_content {
-    max-height: 500px; /* đủ lớn cho content */
+    max-height: 500px;
+    /* đủ lớn cho content */
 }
 
 /* Xoay arrow */
@@ -1466,28 +1550,79 @@ img {
     width: 70%;
 }
 
+/* ===== TEXT-IMAGES ===== */
+#text_image .product_judge_outer {
+    background: #f3eee0;
+    ;
+}
+
+.product_judge_outer {
+    padding: 56px 0;
+}
+
+.product_text_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+}
+
+.product_text_image_reviews {
+    max-width: 350px;
+}
+
+.product_text {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.product_text p {
+    flex: 1;
+}
+
+.product_text img {
+    max-width: 300px;
+    width: 100%;
+}
 
 /* ================= RESPONSIVE DESIGN ================= */
+
+/* ===== TABLET & SMALL DESKTOP (1024px và xuống) ===== */
 @media (max-width: 1024px) {
+
+    /* Layout Changes */
     #Pricing_CTA {
         grid-template-columns: 1fr;
+        /* Stack cột dọc */
         gap: 40px;
     }
 
     .main_product {
         position: static;
+        /* Bỏ sticky */
         max-width: 100%;
         margin: 0 auto;
     }
 
+    /* Grid Adjustments */
     .product_why_bloating_grid {
         grid-template-columns: repeat(3, 1fr);
+        /* 3 cột thay vì 5 */
     }
 
     .product_ingr_table {
         grid-template-columns: repeat(2, 1fr);
+        /* 2 cột thay vì 4 */
     }
 
+    .pli_flex {
+        grid-template-columns: 1fr;
+        /* Stack dọc */
+        gap: 40px;
+    }
+
+    /* Component Adjustments */
     .reviews_summary {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -1506,38 +1641,42 @@ img {
         height: 300px;
     }
 
-    .pli_flex {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    /* UGC Specific Adjustments */
+    #ugc .slick-prev {
+        left: -15px;
     }
 
-    .product_icons_grid {
-        flex-wrap: wrap;
-        justify-content: center;
+    #ugc .slick-next {
+        right: -15px;
+    }
+
+    #ugc .product-section_title {
+        font-size: 2rem;
     }
 }
 
+/* ===== TABLET (768px và xuống) ===== */
 @media (max-width: 768px) {
+
+    /* Base Layout */
     #Pricing_CTA {
         padding: 20px 16px;
     }
 
-    .main_product_title {
+    /* Typography - Smaller font sizes */
+    .main_product_title,
+    .title-h2 {
         font-size: 24px;
     }
 
-    .product_judge_container_title {
+    .product_judge_container_title,
+    .product_section_title,
+    .title-h1 {
         font-size: 24px;
     }
 
-    .product_section_title {
-        font-size: 24px;
-    }
-
-    .product_why_bloating_grid {
-        grid-template-columns: 1fr;
-    }
-
+    /* Grid Systems - Single column */
+    .product_why_bloating_grid,
     .product_ingr_table {
         grid-template-columns: 1fr;
     }
@@ -1548,6 +1687,7 @@ img {
         grid-template-columns: 1fr;
     }
 
+    /* Flex Components */
     .product_act_footer {
         flex-direction: column;
         gap: 12px;
@@ -1560,15 +1700,18 @@ img {
         padding-bottom: 12px;
     }
 
-    .product_primary_btn {
-        padding: 18px 40px;
-        font-size: 16px;
-    }
-
     .product_icons_grid {
         flex-direction: column;
     }
 
+    /* Buttons */
+    .product_primary_btn,
+    .btn-base {
+        padding: 18px 40px;
+        font-size: 16px;
+    }
+
+    /* Components */
     .customer_reviews_container {
         padding: 20px;
     }
@@ -1577,43 +1720,113 @@ img {
         text-align: center;
     }
 
-    .outer_how_nothing {
+    /* UGC Mobile Adjustments */
+    #ugc {
         padding: 40px 0;
     }
 
-    .product_judge_outer {
+    #ugc .product_judge-outer {
         padding: 40px 0;
+    }
+
+    #ugc .page-width {
+        padding: 0 15px;
+    }
+
+    #ugc .product-section_title {
+        font-size: 1.75rem;
+    }
+
+    #ugc .slick-slide {
+        width: calc(50% - 20px) !important;
+        /* 2 videos per row on mobile */
+    }
+
+    #ugc .slick-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    #ugc .slick-arrow img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #ugc .slick-prev {
+        left: -10px;
+    }
+
+    #ugc .slick-next {
+        right: -10px;
+    }
+
+    #ugc .product_primary-btn {
+        padding: 16px 30px;
+        font-size: 1.1rem;
     }
 }
 
+/* ===== MOBILE (480px và xuống) ===== */
 @media (max-width: 480px) {
-    .main_product_title {
+
+    /* Typography - Smallest font sizes */
+    .main_product_title,
+    .title-h2 {
         font-size: 20px;
     }
 
     .product_judge_container_title,
-    .product_section_title {
+    .product_section_title,
+    .title-h1,
+    .title-h3 {
         font-size: 20px;
     }
 
-    .product_primary_btn {
+    /* Buttons - Full width và smaller */
+    .product_primary_btn,
+    .btn-base,
+    .btn_write_review {
         padding: 14px 30px;
         font-size: 14px;
         width: 100%;
     }
 
-    .btn_write_review {
-        width: 100%;
-    }
-
+    /* Component Adjustments */
     .product_selector_head {
         flex-wrap: wrap;
         gap: 8px;
     }
 
-    .nutri_popup_inner {
-        max-width: 90%;
-        padding: 12px;
+    /* UGC Mobile Small Adjustments */
+    #ugc .slick-arrow {
+        display: none !important;
+    }
+
+    #ugc .slick-slide {
+        width: calc(100% - 20px) !important;
+        /* 1 video per row on small mobile */
+    }
+
+    #ugc .product-section_title {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+
+    #ugc .product_primary-btn {
+        padding: 14px 25px;
+        font-size: 1rem;
+    }
+
+    #ugc .product_primary-btn-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Section Spacing */
+    .outer_how_nothing,
+    .product_judge_outer,
+    .section-wrapper {
+        padding: 40px 0;
     }
 }
 
@@ -1636,16 +1849,242 @@ img {
     }
 }
 
-.align_left {
-    text-align: left;
-}
+
 
 .reversed {
     direction: rtl;
 }
 
-.reversed > * {
+.reversed>* {
     direction: ltr;
 }
 
+/* ================= UGC SECTION - Video carousel với slick slider ================= */
+#ugc {
+    padding: 60px 0;
+}
 
+/* Container và layout chính */
+.product_judge-outer {
+    background: #f3eee0;
+    padding: 60px 0;
+}
+
+.page-width {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product_judge-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Product-ugc-stars {
+    max-width: 200px;
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.product-section_title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.product-section_text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Carousel Styling */
+.product_carousel-outer {
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.product_ugc-container {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slick-list {
+    margin: 0 -10px;
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex !important;
+    align-items: center;
+    margin: 0;
+}
+
+.slick-slide {
+    padding: 0 10px;
+    outline: none;
+    height: auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    float: none !important;
+}
+
+.slick-slide>div {
+    width: 100%;
+    height: 100%;
+}
+
+.slick-slide>div>div {
+    display: block !important;
+    width: 100% !important;
+    height: 100%;
+}
+
+.product_ugc-video {
+    position: relative;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    height: auto;
+}
+
+.product_ugc-video:hover {
+    transform: scale(1.02);
+}
+
+.product_ugc-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product_ugc-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Navigation Arrows */
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slick-arrow:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+.slick-next {
+    right: -25px;
+}
+
+.slick-arrow img {
+    width: 24px;
+    height: 24px;
+}
+
+.slick-arrow.slick-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.slick-arrow.slick-disabled:hover {
+    transform: translateY(-50%) scale(1);
+}
+
+/* Dots Navigation */
+.slick-dots {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+    gap: 8px;
+}
+
+.slick-dots li {
+    margin: 0;
+}
+
+.slick-dots button {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    font-size: 0;
+    transition: all 0.3s ease;
+}
+
+.slick-dots .slick-active button {
+    background: #333;
+    transform: scale(1.2);
+}
+
+/* Custom Navigation (if needed) */
+.product_ugc-carousel-nav {
+    display: none;
+    /* Hidden since we're using slick navigation */
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+    #ugc .slick-slide {
+        width: calc(25% - 20px) !important;
+        /* 4 videos per row on large screens */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #ugc .slick-slide {
+        width: calc(33.333% - 20px) !important;
+        /* 3 videos per row on medium screens */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #ugc .slick-slide {
+        width: calc(50% - 20px) !important;
+        /* 2 videos per row on tablet */
+    }
+}
+
+/* UGC Responsive - được gộp vào phần responsive chung ở trên */
