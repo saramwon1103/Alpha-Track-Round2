@@ -1450,6 +1450,22 @@ img {
     transform: rotate(180deg);
 }
 
+/* ===== STATS ===== */
+.product_stats_outer {
+    display: flex;
+    align-items: center;
+}
+
+.product_expert_content {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding: 32px;
+}
+
+.product_stats_outer>div:nth-child(2) {
+    width: 70%;
+}
+
 
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 1024px) {
@@ -1631,4 +1647,5 @@ img {
 .reversed > * {
     direction: ltr;
 }
+
 
