@@ -1181,7 +1181,7 @@ img {
 
 /* ===== WRAP ===== */
 #reviews {
-    padding: 80px 0;
+    padding: 80px 20px;
     background: #fffaf9;
 }
 
@@ -1191,6 +1191,7 @@ img {
     background: #fff;
     border-radius: 12px;
     padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 /* ===== HEADER ===== */
@@ -1418,7 +1419,13 @@ img {
 
 /* ================= EXPERT ================= */
 .product_judge_outer {
-    padding: 56px 0;
+    padding: 56px 20px;
+}
+
+.product_judge_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .product_expert_advice {
@@ -1490,11 +1497,12 @@ img {
 /* ================= FAQ - Accordion với animation ================= */
 .product_faq_container {
     background: linear-gradient(180deg, #fff, #f3eee0);
-    max-width: 824px;
-    margin: auto;
+    max-width: 1000px;
+    margin: 40px auto;
     border-radius: 16px;
     overflow: hidden;
-    padding: 32px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .product_faq_box {
@@ -1558,32 +1566,34 @@ img {
 /* ===== TEXT-IMAGES ===== */
 #text_image .product_judge_outer {
     background: #f3eee0;
-    ;
+    padding: 56px 20px;
 }
 
 .product_judge_outer {
-    padding: 56px 0;
+    padding: 56px 20px;
 }
 
 .product_text_image {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 64px;
 }
 
 .product_text_image_reviews {
     max-width: 350px;
+    margin-bottom: 20px;
 }
 
 .product_text {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
+    margin: 20px 0;
 }
 
 .product_text p {
     flex: 1;
+    margin: 0 0 12px 0;
 }
 
 .product_text img {
@@ -1654,6 +1664,14 @@ img {
     }
 
     /* UGC Specific Adjustments */
+    #ugc {
+        padding: 40px 20px;
+    }
+
+    #ugc .product_judge-outer {
+        padding: 40px 20px;
+    }
+
     #ugc .slick-prev {
         left: -15px;
     }
@@ -1732,6 +1750,28 @@ img {
 
     .product_icons_grid {
         flex-direction: column;
+    }
+
+    /* Section improvements for tablet */
+    #reviews {
+        padding: 60px 16px;
+    }
+
+    .customer_reviews_container {
+        padding: 24px;
+    }
+
+    .product_judge_outer {
+        padding: 40px 16px;
+    }
+
+    .product_faq_container {
+        margin: 30px auto;
+        padding: 24px;
+    }
+
+    .product_text_image {
+        gap: 24px;
     }
 
     /* Buttons */
@@ -1853,7 +1893,52 @@ img {
         font-size: 16px;
     }
 
+    /* Additional section improvements for mobile */
+    #reviews {
+        padding: 40px 12px;
+    }
+
+    .customer_reviews_container {
+        padding: 20px;
+        margin: 30px auto 0;
+    }
+
+    .product_judge_outer {
+        padding: 30px 12px;
+    }
+
+    .product_faq_container {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: calc(100% - 24px);
+    }
+
+    .product_text_image {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .product_text_image_reviews {
+        max-width: 100%;
+    }
+
+    .reviews_title {
+        font-size: 20px;
+    }
+
+    .product_expert_advice {
+        flex-direction: column;
+    }
+
     /* UGC Mobile Small Adjustments */
+    #ugc {
+        padding: 30px 12px;
+    }
+
+    #ugc .product_judge-outer {
+        padding: 30px 12px;
+    }
+
     #ugc .slick-arrow {
         display: none !important;
     }
@@ -1917,13 +2002,13 @@ img {
 
 /* ================= UGC SECTION - Video carousel với slick slider ================= */
 #ugc {
-    padding: 60px 0;
+    padding: 60px 20px;
 }
 
 /* Container và layout chính */
 .product_judge-outer {
     background: #f3eee0;
-    padding: 60px 0;
+    padding: 60px 20px;
 }
 
 .page-width {
