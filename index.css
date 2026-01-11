@@ -1047,11 +1047,13 @@ img {
 /* ================= INGREDIENT - Grid table với expandable content ================= */
 .product_judge_outer.ingredients {
     background: #f3eee0;
+    padding: 60px 20px;
 }
 
 .product_judge_container {
-    max-width: 800px;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .product_section_title {
@@ -1073,13 +1075,16 @@ img {
 }
 
 .product_ingr_table {
-    margin-top: 40px;
+    margin: 40px auto 0;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2px;
     background: #fff;
     border-radius: 12px;
     border: .5px solid black;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .product_ingr {
@@ -1614,6 +1619,13 @@ img {
     .product_ingr_table {
         grid-template-columns: repeat(2, 1fr);
         /* 2 cột thay vì 4 */
+        max-width: 800px;
+        margin: 30px auto 0;
+    }
+
+    /* Ingredients section tablet adjustments */
+    .product_judge_outer.ingredients {
+        padding: 50px 20px;
     }
 
     .pli_flex {
@@ -1679,6 +1691,24 @@ img {
     .product_why_bloating_grid,
     .product_ingr_table {
         grid-template-columns: 1fr;
+    }
+
+    /* Ingredients section improvements */
+    .product_judge_outer.ingredients {
+        padding: 40px 16px;
+    }
+
+    .product_judge_container {
+        padding: 0 16px;
+    }
+
+    .product_ingr_table {
+        max-width: 100%;
+        margin: 30px auto 0;
+    }
+
+    .product_ingr {
+        padding: 20px 16px;
     }
 
     .main_product_2nd,
@@ -1795,6 +1825,32 @@ img {
     .product_selector_head {
         flex-wrap: wrap;
         gap: 8px;
+    }
+
+    /* Ingredients section mobile improvements */
+    .product_judge_outer.ingredients {
+        padding: 30px 12px;
+    }
+
+    .product_judge_container {
+        padding: 0 12px;
+    }
+
+    .product_ingr_table {
+        margin: 20px auto 0;
+        gap: 1px;
+    }
+
+    .product_ingr {
+        padding: 16px 12px;
+    }
+
+    .product_section_title {
+        font-size: 18px !important;
+    }
+
+    .product_section_text {
+        font-size: 16px;
     }
 
     /* UGC Mobile Small Adjustments */
